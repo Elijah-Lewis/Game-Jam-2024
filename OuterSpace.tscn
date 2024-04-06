@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnwdhbw3tkr2n"]
+
+[ext_resource type="Script" path="res://OuterSpaceScene/Asteroid.gd" id="1_fdwbi"]
+[ext_resource type="Script" path="res://OuterSpaceScene/UserCharacter.gd" id="2_greg0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bgjh7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le18i"]
+
+[node name="OuterSpace" type="Node2D"]
+
+[node name="Asteroid" type="CharacterBody2D" parent="."]
+script = ExtResource("1_fdwbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Asteroid"]
+scale = Vector2(8.48, 8.8)
+shape = SubResource("CircleShape2D_bgjh7")
+
+[node name="UserCharacter" type="CharacterBody2D" parent="."]
+scale = Vector2(26.07, -23.7959)
+up_direction = Vector2(1, -0.0004)
+script = ExtResource("2_greg0")
+MAX_SPEED = null
+ACCELERATION = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UserCharacter"]
+shape = SubResource("RectangleShape2D_le18i")
